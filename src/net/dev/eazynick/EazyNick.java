@@ -13,7 +13,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.mojang.authlib.GameProfile;
 
 import net.dev.eazynick.commands.*;
-import net.dev.eazynick.hooks.DeluxeChatListener;
 import net.dev.eazynick.hooks.PlaceHolderExpansion;
 import net.dev.eazynick.listeners.*;
 import net.dev.eazynick.sql.*;
@@ -120,8 +119,8 @@ public class EazyNick extends JavaPlugin {
 			isCancelled = true;
 		} else {
 			if (version.equals("1_7_R4")) {
-				utils.setNameField(reflectUtils.getField(net.minecraft.util.com.mojang.authlib.GameProfile.class, "name"));
-				utils.setUUIDField(reflectUtils.getField(net.minecraft.util.com.mojang.authlib.GameProfile.class, "id"));
+				utils.setNameField(reflectUtils.getField(GameProfile.class, "name"));
+				utils.setUUIDField(reflectUtils.getField(GameProfile.class, "id"));
 				
 				gameProfileBuilder_1_7 = new GameProfileBuilder_1_7();
 				uuidFetcher_1_7 = new UUIDFetcher_1_7();
@@ -241,9 +240,7 @@ public class EazyNick extends JavaPlugin {
 		}
 		
 		if(utils.deluxeChatStatus()) {
-			pm.registerEvents(new DeluxeChatListener(), instance);
-			
-			utils.sendConsole("§7DeluxeChat hooked successfully!");
+			utils.sendConsole("§7DeluxeChat hooked has been removed!");
 		}
 	}
 	

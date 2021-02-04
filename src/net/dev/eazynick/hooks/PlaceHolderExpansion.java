@@ -1,14 +1,13 @@
 package net.dev.eazynick.hooks;
 
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
-
 import net.dev.eazynick.EazyNick;
 import net.dev.eazynick.api.NickManager;
 import net.dev.eazynick.sql.MySQLNickManager;
 import net.dev.eazynick.utils.Utils;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 public class PlaceHolderExpansion extends PlaceholderExpansion {
 	
